@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_home_about_us_contents",
+  "info": {
+    "displayName": "Home about us content"
+  },
+  "options": {},
+  "attributes": {
+    "titleOne": {
+      "type": "string"
+    },
+    "titlTwo": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-with-link"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "numericInfos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.title-description-video"
+    }
+  }
+}

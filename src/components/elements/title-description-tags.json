@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_title_description_tags",
+  "info": {
+    "displayName": "Styled Titles -> Description -> Tags",
+    "icon": "command",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "coloredTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

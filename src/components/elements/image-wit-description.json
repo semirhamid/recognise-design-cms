@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_elements_image_wit_descriptions",
+  "info": {
+    "displayName": "ImageWithDescription",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

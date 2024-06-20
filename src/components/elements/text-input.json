@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_elements_text_inputs",
+  "info": {
+    "displayName": "TextInput"
+  },
+  "options": {},
+  "attributes": {
+    "TextInput": {
+      "type": "string"
+    }
+  }
+}

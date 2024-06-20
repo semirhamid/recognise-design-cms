@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_home_our_work_sections",
+  "info": {
+    "displayName": "Home our work section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-with-link"
+    },
+    "works": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image-title-description-link"
+    },
+    "titleTwo": {
+      "type": "richtext"
+    }
+  }
+}

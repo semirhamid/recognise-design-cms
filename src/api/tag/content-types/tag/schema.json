@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tags": {
+      "type": "string"
+    },
+    "service_lists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service-list.service-list",
+      "mappedBy": "tags"
+    }
+  }
+}

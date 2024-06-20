@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_image_title_description_links",
+  "info": {
+    "displayName": "Image - title - Description - link"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

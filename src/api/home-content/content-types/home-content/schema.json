@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_contents",
+  "info": {
+    "singularName": "home-content",
+    "pluralName": "home-contents",
+    "displayName": "Home content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.text-with-content"
+    },
+    "heroTextOne": {
+      "type": "string"
+    },
+    "heroTextTwo": {
+      "type": "string"
+    },
+    "heroTextDynamicThree": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-input"
+    },
+    "aboutUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.home-about-us-content"
+    },
+    "featuredServices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.home-featured-services"
+    },
+    "ourWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.home-our-work-section"
+    }
+  }
+}

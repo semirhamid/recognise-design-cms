@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_text_areas",
+  "info": {
+    "displayName": "TextArea",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

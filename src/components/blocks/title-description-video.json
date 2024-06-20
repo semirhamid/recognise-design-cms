@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_title_description_videos",
+  "info": {
+    "displayName": "Title - Description - Video"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
