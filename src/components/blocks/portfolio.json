@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_portfolios",
+  "info": {
+    "displayName": "portfolio",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "headerText": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-with-link"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_setup_team_s",
+  "info": {
+    "displayName": "setup team ",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "headerImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "step": {
+      "displayName": "step",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.step"
+    },
+    "role": {
+      "displayName": "role",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.role"
+    }
+  }
+}

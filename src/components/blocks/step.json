@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_steps",
+  "info": {
+    "displayName": "step",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

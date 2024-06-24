@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_who_are_wes",
+  "info": {
+    "displayName": "who-are-we",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.button-with-link"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

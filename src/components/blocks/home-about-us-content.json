@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_home_about_us_contents",
   "info": {
-    "displayName": "Home about us content"
+    "displayName": "Home about us content",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,13 +17,21 @@
       "repeatable": false,
       "component": "elements.button-with-link"
     },
-    "description": {
+    "descriptionn": {
       "type": "richtext"
     },
     "numericInfos": {
       "type": "component",
       "repeatable": true,
       "component": "blocks.title-description-video"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

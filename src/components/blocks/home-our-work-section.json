@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_home_our_work_sections",
   "info": {
-    "displayName": "Home our work section"
+    "displayName": "Home our work section",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -21,8 +22,16 @@
       "repeatable": true,
       "component": "elements.image-title-description-link"
     },
-    "titleTwo": {
+    "titleTwoo": {
       "type": "richtext"
+    },
+    "titleTwo": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

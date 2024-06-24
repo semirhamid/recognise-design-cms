@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_about_us_headers",
+  "info": {
+    "displayName": "aboutUsHeader",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "numInfo": {
+      "displayName": "numInfo",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.num-info"
+    }
+  }
+}

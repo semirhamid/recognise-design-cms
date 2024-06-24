@@ -788,6 +788,46 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsAboutUs extends Schema.SingleType {
+  collectionName: 'about_uses';
+  info: {
+    singularName: 'about-us';
+    pluralName: 'about-uses';
+    displayName: 'About Us';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutUsHeader: Attribute.Component<'blocks.about-us-header'>;
+    whoAreWe: Attribute.Component<'blocks.who-are-we'>;
+    process: Attribute.Component<'blocks.process', true>;
+    quote: Attribute.Component<'blocks.quote'>;
+    setupTeam: Attribute.Component<'blocks.setup-team'>;
+    portfolio: Attribute.Component<'blocks.portfolio'>;
+    roleAndResponsibility: Attribute.Component<
+      'blocks.role-and-responsiblity',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1233,6 +1273,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::category.category': ApiCategoryCategory;
       'api::client.client': ApiClientClient;
       'api::company-video.company-video': ApiCompanyVideoCompanyVideo;

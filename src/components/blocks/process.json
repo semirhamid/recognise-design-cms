@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_blocks_processes",
+  "info": {
+    "displayName": "process",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "coloredTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "bgImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "svg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

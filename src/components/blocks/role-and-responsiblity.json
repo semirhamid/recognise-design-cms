@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_role_and_responsiblity_s",
+  "info": {
+    "displayName": "role and responsiblity "
+  },
+  "options": {},
+  "attributes": {
+    "pahseName": {
+      "type": "string"
+    },
+    "leftText": {
+      "type": "text"
+    },
+    "rightText": {
+      "type": "text"
+    }
+  }
+}

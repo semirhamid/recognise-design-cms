@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_quotes",
+  "info": {
+    "displayName": "quote",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "quote": {
+      "type": "blocks"
+    }
+  }
+}

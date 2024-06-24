@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutUsHeader": {
+      "displayName": "aboutUsHeader",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.about-us-header"
+    },
+    "whoAreWe": {
+      "displayName": "who-are-we",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.who-are-we"
+    },
+    "process": {
+      "displayName": "process",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.process"
+    },
+    "quote": {
+      "displayName": "quote",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.quote"
+    },
+    "setupTeam": {
+      "displayName": "setup team ",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.setup-team"
+    },
+    "portfolio": {
+      "displayName": "portfolio",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.portfolio"
+    },
+    "roleAndResponsibility": {
+      "displayName": "role and responsiblity ",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.role-and-responsiblity"
+    }
+  }
+}
