@@ -2,7 +2,8 @@
   "collectionName": "components_blocks_about_us_headers",
   "info": {
     "displayName": "aboutUsHeader",
-    "icon": "archive"
+    "icon": "archive",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,14 +13,14 @@
     "subtitle": {
       "type": "string"
     },
-    "description": {
-      "type": "blocks"
-    },
     "numInfo": {
       "displayName": "numInfo",
       "type": "component",
       "repeatable": true,
       "component": "blocks.num-info"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

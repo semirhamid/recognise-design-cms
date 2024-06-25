@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_blocks_why_us_s",
+  "info": {
+    "displayName": "why us ",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "bgImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "colorTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "foregroundImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

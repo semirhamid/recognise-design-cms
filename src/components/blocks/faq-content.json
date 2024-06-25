@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_faq_contents",
+  "info": {
+    "displayName": "faq content",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "string"
+    }
+  }
+}

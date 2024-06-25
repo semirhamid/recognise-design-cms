@@ -1,18 +1,42 @@
 {
   "collectionName": "components_blocks_role_and_responsiblity_s",
   "info": {
-    "displayName": "role and responsiblity "
+    "displayName": "role and responsiblity ",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "pahseName": {
+    "title": {
       "type": "string"
     },
-    "leftText": {
-      "type": "text"
+    "leftCardImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     },
-    "rightText": {
-      "type": "text"
+    "rightCardTitle": {
+      "type": "string"
+    },
+    "rightCardIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "content": {
+      "displayName": "content",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.content"
     }
   }
 }

@@ -2,17 +2,16 @@
   "collectionName": "components_blocks_who_are_wes",
   "info": {
     "displayName": "who-are-we",
-    "icon": "pinMap"
+    "icon": "pinMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "button": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.button-with-link"
+    "title": {
+      "type": "string"
     },
     "description": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

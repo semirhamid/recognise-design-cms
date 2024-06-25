@@ -5,12 +5,68 @@ export interface BlocksAboutUsHeader extends Schema.Component {
   info: {
     displayName: 'aboutUsHeader';
     icon: 'archive';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.String;
-    description: Attribute.Blocks;
     numInfo: Attribute.Component<'blocks.num-info', true>;
+    description: Attribute.RichText;
+  };
+}
+
+export interface BlocksCard extends Schema.Component {
+  collectionName: 'components_blocks_cards';
+  info: {
+    displayName: 'card';
+    icon: 'calendar';
+    description: '';
+  };
+  attributes: {
+    cardDescription: Attribute.Text;
+    bgImg: Attribute.Media;
+    buttonText: Attribute.String;
+    buttonIcon: Attribute.Media;
+    buttonLink: Attribute.String;
+  };
+}
+
+export interface BlocksContent extends Schema.Component {
+  collectionName: 'components_blocks_contents';
+  info: {
+    displayName: 'content';
+    icon: 'bell';
+    description: '';
+  };
+  attributes: {
+    phaseName: Attribute.String;
+    leftContent: Attribute.RichText;
+    rightContent: Attribute.RichText;
+  };
+}
+
+export interface BlocksFaqContent extends Schema.Component {
+  collectionName: 'components_blocks_faq_contents';
+  info: {
+    displayName: 'faq content';
+    icon: 'briefcase';
+  };
+  attributes: {
+    question: Attribute.Text;
+    answer: Attribute.String;
+  };
+}
+
+export interface BlocksFaq extends Schema.Component {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    displayName: 'faq';
+    icon: 'cube';
+  };
+  attributes: {
+    title: Attribute.String;
+    card: Attribute.Component<'blocks.card'>;
+    faqContent: Attribute.Component<'blocks.faq-content', true>;
   };
 }
 
@@ -119,12 +175,14 @@ export interface BlocksProcess extends Schema.Component {
   info: {
     displayName: 'process';
     icon: 'clock';
+    description: '';
   };
   attributes: {
     coloredTitle: Attribute.String;
     title: Attribute.String;
     bgImg: Attribute.Media;
     svg: Attribute.Media;
+    description: Attribute.Text;
   };
 }
 
@@ -133,10 +191,11 @@ export interface BlocksQuote extends Schema.Component {
   info: {
     displayName: 'quote';
     icon: 'code';
+    description: '';
   };
   attributes: {
     img: Attribute.Media;
-    quote: Attribute.Blocks;
+    quote: Attribute.RichText;
   };
 }
 
@@ -144,11 +203,14 @@ export interface BlocksRoleAndResponsiblity extends Schema.Component {
   collectionName: 'components_blocks_role_and_responsiblity_s';
   info: {
     displayName: 'role and responsiblity ';
+    description: '';
   };
   attributes: {
-    pahseName: Attribute.String;
-    leftText: Attribute.Text;
-    rightText: Attribute.Text;
+    title: Attribute.String;
+    leftCardImg: Attribute.Media;
+    rightCardTitle: Attribute.String;
+    rightCardIcon: Attribute.Media;
+    content: Attribute.Component<'blocks.content', true>;
   };
 }
 
@@ -162,6 +224,22 @@ export interface BlocksRole extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     icon: Attribute.Media;
+  };
+}
+
+export interface BlocksServiceHeader extends Schema.Component {
+  collectionName: 'components_blocks_service_headers';
+  info: {
+    displayName: 'service header';
+    icon: 'clock';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    coloredTitle: Attribute.String;
+    description: Attribute.Text;
+    headerImg: Attribute.Media;
+    subHeader: Attribute.Component<'blocks.sub-header'>;
   };
 }
 
@@ -179,15 +257,41 @@ export interface BlocksSetupTeam extends Schema.Component {
   };
 }
 
+export interface BlocksStepWithImg extends Schema.Component {
+  collectionName: 'components_blocks_step_with_imgs';
+  info: {
+    displayName: 'stepWithImg';
+    icon: 'command';
+  };
+  attributes: {
+    img: Attribute.Media;
+  };
+}
+
 export interface BlocksStep extends Schema.Component {
   collectionName: 'components_blocks_steps';
   info: {
     displayName: 'step';
     icon: 'cog';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     icon: Attribute.Media;
+    description: Attribute.Text;
+  };
+}
+
+export interface BlocksSubHeader extends Schema.Component {
+  collectionName: 'components_blocks_sub_headers';
+  info: {
+    displayName: 'sub header';
+    icon: 'briefcase';
+    description: '';
+  };
+  attributes: {
+    img: Attribute.Media;
+    description: Attribute.RichText;
   };
 }
 
@@ -217,15 +321,44 @@ export interface BlocksTitleDescriptionVideo extends Schema.Component {
   };
 }
 
+export interface BlocksVisual extends Schema.Component {
+  collectionName: 'components_blocks_visuals';
+  info: {
+    displayName: 'visual';
+    icon: 'command';
+  };
+  attributes: {
+    leftVisual: Attribute.Media;
+    rightVisual: Attribute.Media;
+    mainVisual: Attribute.Media;
+  };
+}
+
 export interface BlocksWhoAreWe extends Schema.Component {
   collectionName: 'components_blocks_who_are_wes';
   info: {
     displayName: 'who-are-we';
     icon: 'pinMap';
+    description: '';
   };
   attributes: {
-    button: Attribute.Component<'elements.button-with-link', true>;
-    description: Attribute.Blocks;
+    title: Attribute.String;
+    description: Attribute.RichText;
+  };
+}
+
+export interface BlocksWhyUs extends Schema.Component {
+  collectionName: 'components_blocks_why_us_s';
+  info: {
+    displayName: 'why us ';
+    icon: 'information';
+  };
+  attributes: {
+    bgImg: Attribute.Media;
+    colorTitle: Attribute.String;
+    title: Attribute.String;
+    foregroundImg: Attribute.Media;
+    description: Attribute.Text;
   };
 }
 
@@ -276,6 +409,19 @@ export interface ElementsMenuItem extends Schema.Component {
   attributes: {
     label: Attribute.String;
     link: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ElementsOurProcess extends Schema.Component {
+  collectionName: 'components_elements_our_processes';
+  info: {
+    displayName: 'our process';
+    icon: 'cog';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
   };
 }
 
@@ -331,6 +477,10 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blocks.about-us-header': BlocksAboutUsHeader;
+      'blocks.card': BlocksCard;
+      'blocks.content': BlocksContent;
+      'blocks.faq-content': BlocksFaqContent;
+      'blocks.faq': BlocksFaq;
       'blocks.home-about-us-content': BlocksHomeAboutUsContent;
       'blocks.home-featured-services': BlocksHomeFeaturedServices;
       'blocks.home-our-work-section': BlocksHomeOurWorkSection;
@@ -340,15 +490,21 @@ declare module '@strapi/types' {
       'blocks.quote': BlocksQuote;
       'blocks.role-and-responsiblity': BlocksRoleAndResponsiblity;
       'blocks.role': BlocksRole;
+      'blocks.service-header': BlocksServiceHeader;
       'blocks.setup-team': BlocksSetupTeam;
+      'blocks.step-with-img': BlocksStepWithImg;
       'blocks.step': BlocksStep;
+      'blocks.sub-header': BlocksSubHeader;
       'blocks.text-with-content': BlocksTextWithContent;
       'blocks.title-description-video': BlocksTitleDescriptionVideo;
+      'blocks.visual': BlocksVisual;
       'blocks.who-are-we': BlocksWhoAreWe;
+      'blocks.why-us': BlocksWhyUs;
       'elements.button-with-link': ElementsButtonWithLink;
       'elements.image-title-description-link': ElementsImageTitleDescriptionLink;
       'elements.image-wit-description': ElementsImageWitDescription;
       'elements.menu-item': ElementsMenuItem;
+      'elements.our-process': ElementsOurProcess;
       'elements.test-component': ElementsTestComponent;
       'elements.text-area': ElementsTextArea;
       'elements.text-input': ElementsTextInput;

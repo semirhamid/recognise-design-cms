@@ -2,22 +2,24 @@
   "collectionName": "components_blocks_quotes",
   "info": {
     "displayName": "quote",
-    "icon": "code"
+    "icon": "code",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "quote": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

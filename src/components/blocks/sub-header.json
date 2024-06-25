@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_sub_headers",
+  "info": {
+    "displayName": "sub header",
+    "icon": "briefcase",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

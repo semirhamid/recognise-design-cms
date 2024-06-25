@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_blocks_service_headers",
+  "info": {
+    "displayName": "service header",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "coloredTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "headerImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subHeader": {
+      "displayName": "sub header",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.sub-header"
+    }
+  }
+}

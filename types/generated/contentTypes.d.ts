@@ -806,10 +806,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     quote: Attribute.Component<'blocks.quote'>;
     setupTeam: Attribute.Component<'blocks.setup-team'>;
     portfolio: Attribute.Component<'blocks.portfolio'>;
-    roleAndResponsibility: Attribute.Component<
-      'blocks.role-and-responsiblity',
-      true
-    >;
+    roleAndResponsibility: Attribute.Component<'blocks.role-and-responsiblity'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1127,6 +1124,42 @@ export interface ApiPortfolioPageContentPortfolioPageContent
   };
 }
 
+export interface ApiServiceService extends Schema.SingleType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceHeader: Attribute.Component<'blocks.service-header'>;
+    visual: Attribute.Component<'blocks.visual'>;
+    information: Attribute.Component<'elements.our-process', true>;
+    stepWithImg: Attribute.Component<'blocks.step-with-img', true>;
+    whyUs: Attribute.Component<'blocks.why-us', true>;
+    faq: Attribute.Component<'blocks.faq'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceListServiceList extends Schema.CollectionType {
   collectionName: 'service_lists';
   info: {
@@ -1283,6 +1316,7 @@ declare module '@strapi/types' {
       'api::home-content.home-content': ApiHomeContentHomeContent;
       'api::logo.logo': ApiLogoLogo;
       'api::portfolio-page-content.portfolio-page-content': ApiPortfolioPageContentPortfolioPageContent;
+      'api::service.service': ApiServiceService;
       'api::service-list.service-list': ApiServiceListServiceList;
       'api::tag.tag': ApiTagTag;
       'api::test-page.test-page': ApiTestPageTestPage;

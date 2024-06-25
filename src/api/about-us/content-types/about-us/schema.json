@@ -51,7 +51,7 @@
     "roleAndResponsibility": {
       "displayName": "role and responsiblity ",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "blocks.role-and-responsiblity"
     }
   }

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_our_processes",
+  "info": {
+    "displayName": "our process",
+    "icon": "cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
