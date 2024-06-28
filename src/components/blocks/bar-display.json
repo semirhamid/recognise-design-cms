@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_bar_displays",
+  "info": {
+    "displayName": "bar display",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

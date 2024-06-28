@@ -15,6 +15,18 @@ export interface BlocksAboutUsHeader extends Schema.Component {
   };
 }
 
+export interface BlocksBarDisplay extends Schema.Component {
+  collectionName: 'components_blocks_bar_displays';
+  info: {
+    displayName: 'bar display';
+    icon: 'calendar';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface BlocksCard extends Schema.Component {
   collectionName: 'components_blocks_cards';
   info: {
@@ -45,6 +57,35 @@ export interface BlocksContent extends Schema.Component {
   };
 }
 
+export interface BlocksFaqCardContent extends Schema.Component {
+  collectionName: 'components_blocks_faq_card_contents';
+  info: {
+    displayName: 'faqCardContent';
+    icon: 'collapse';
+  };
+  attributes: {
+    title: Attribute.String;
+    buttonText: Attribute.String;
+    buttonLink: Attribute.String;
+    description: Attribute.Text;
+    buttonIcon: Attribute.Media;
+  };
+}
+
+export interface BlocksFaqCard extends Schema.Component {
+  collectionName: 'components_blocks_faq_cards';
+  info: {
+    displayName: 'faq card';
+    icon: 'bold';
+  };
+  attributes: {
+    description: Attribute.Text;
+    buttonLink: Attribute.String;
+    buttonText: Attribute.String;
+    buttonIcon: Attribute.Media;
+  };
+}
+
 export interface BlocksFaqContent extends Schema.Component {
   collectionName: 'components_blocks_faq_contents';
   info: {
@@ -57,16 +98,52 @@ export interface BlocksFaqContent extends Schema.Component {
   };
 }
 
+export interface BlocksFaqMain extends Schema.Component {
+  collectionName: 'components_blocks_faq_mains';
+  info: {
+    displayName: 'faqMain';
+  };
+  attributes: {
+    question: Attribute.Text;
+    answer: Attribute.Text;
+  };
+}
+
+export interface BlocksFaqValue extends Schema.Component {
+  collectionName: 'components_blocks_faq_values';
+  info: {
+    displayName: 'Faq Value';
+    icon: 'cloud';
+    description: '';
+  };
+  attributes: {
+    question: Attribute.Text;
+    answer: Attribute.Text;
+  };
+}
+
 export interface BlocksFaq extends Schema.Component {
   collectionName: 'components_blocks_faqs';
   info: {
     displayName: 'faq';
     icon: 'cube';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     card: Attribute.Component<'blocks.card'>;
-    faqContent: Attribute.Component<'blocks.faq-content', true>;
+  };
+}
+
+export interface BlocksFeatures extends Schema.Component {
+  collectionName: 'components_blocks_features';
+  info: {
+    displayName: 'features';
+    icon: 'code';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.String;
   };
 }
 
@@ -248,6 +325,7 @@ export interface BlocksSetupTeam extends Schema.Component {
   info: {
     displayName: 'setup team ';
     icon: 'attachment';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -352,12 +430,13 @@ export interface BlocksWhyUs extends Schema.Component {
   info: {
     displayName: 'why us ';
     icon: 'information';
+    description: '';
   };
   attributes: {
     bgImg: Attribute.Media;
-    colorTitle: Attribute.String;
+    coloredTitle: Attribute.String;
     title: Attribute.String;
-    foregroundImg: Attribute.Media;
+    svg: Attribute.Media;
     description: Attribute.Text;
   };
 }
@@ -477,10 +556,16 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blocks.about-us-header': BlocksAboutUsHeader;
+      'blocks.bar-display': BlocksBarDisplay;
       'blocks.card': BlocksCard;
       'blocks.content': BlocksContent;
+      'blocks.faq-card-content': BlocksFaqCardContent;
+      'blocks.faq-card': BlocksFaqCard;
       'blocks.faq-content': BlocksFaqContent;
+      'blocks.faq-main': BlocksFaqMain;
+      'blocks.faq-value': BlocksFaqValue;
       'blocks.faq': BlocksFaq;
+      'blocks.features': BlocksFeatures;
       'blocks.home-about-us-content': BlocksHomeAboutUsContent;
       'blocks.home-featured-services': BlocksHomeFeaturedServices;
       'blocks.home-our-work-section': BlocksHomeOurWorkSection;

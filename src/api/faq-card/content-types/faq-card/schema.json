@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "faq_cards",
+  "info": {
+    "singularName": "faq-card",
+    "pluralName": "faq-cards",
+    "displayName": "faq card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faqCard": {
+      "displayName": "faqCardContent",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.faq-card-content"
+    }
+  }
+}

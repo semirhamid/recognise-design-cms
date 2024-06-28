@@ -42,11 +42,11 @@
       "repeatable": true,
       "component": "blocks.why-us"
     },
-    "faq": {
-      "displayName": "faq",
+    "barDisplay": {
+      "displayName": "bar display",
       "type": "component",
-      "repeatable": false,
-      "component": "blocks.faq"
+      "repeatable": true,
+      "component": "blocks.bar-display"
     }
   }
 }

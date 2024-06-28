@@ -2,7 +2,8 @@
   "collectionName": "components_blocks_setup_team_s",
   "info": {
     "displayName": "setup team ",
-    "icon": "attachment"
+    "icon": "attachment",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,14 +11,15 @@
       "type": "string"
     },
     "headerImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "step": {
       "displayName": "step",

@@ -2,7 +2,8 @@
   "collectionName": "components_blocks_faqs",
   "info": {
     "displayName": "faq",
-    "icon": "cube"
+    "icon": "cube",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,12 +15,6 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.card"
-    },
-    "faqContent": {
-      "displayName": "faq content",
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.faq-content"
     }
   }
 }

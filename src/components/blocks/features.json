@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_features",
+  "info": {
+    "displayName": "features",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_faq_values",
+  "info": {
+    "displayName": "Faq Value",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "text"
+    }
+  }
+}

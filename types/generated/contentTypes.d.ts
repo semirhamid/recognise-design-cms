@@ -825,6 +825,110 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::blog.blog', 'title'>;
+    excerpt: Attribute.Text;
+    coverImg: Attribute.Media;
+    author: Attribute.String;
+    category: Attribute.Relation<
+      'api::blog.blog',
+      'oneToOne',
+      'api::blog-category.blog-category'
+    >;
+    featured: Attribute.Boolean;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
+  collectionName: 'blog_categories';
+  info: {
+    singularName: 'blog-category';
+    pluralName: 'blog-categories';
+    displayName: 'Blog Category ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    slug: Attribute.UID<'api::blog-category.blog-category', 'name'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogContentBlogContent extends Schema.SingleType {
+  collectionName: 'blog_contents';
+  info: {
+    singularName: 'blog-content';
+    pluralName: 'blog-contents';
+    displayName: 'Blog Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coloredTitle: Attribute.String;
+    title: Attribute.String;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-content.blog-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-content.blog-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -939,6 +1043,93 @@ export interface ApiContactAddressContactAddress extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::contact-address.contact-address',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
+  collectionName: 'contact_us_pages';
+  info: {
+    singularName: 'contact-us-page';
+    pluralName: 'contact-us-pages';
+    displayName: 'contact us page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coloredTitle: Attribute.String;
+    title: Attribute.String;
+    img: Attribute.Media;
+    features: Attribute.Component<'blocks.features', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-us-page.contact-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-us-page.contact-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    faq: Attribute.Component<'blocks.faq-value'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqCardFaqCard extends Schema.SingleType {
+  collectionName: 'faq_cards';
+  info: {
+    singularName: 'faq-card';
+    pluralName: 'faq-cards';
+    displayName: 'faq card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    faqCard: Attribute.Component<'blocks.faq-card-content'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-card.faq-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-card.faq-card',
       'oneToOne',
       'admin::user'
     > &
@@ -1141,7 +1332,7 @@ export interface ApiServiceService extends Schema.SingleType {
     information: Attribute.Component<'elements.our-process', true>;
     stepWithImg: Attribute.Component<'blocks.step-with-img', true>;
     whyUs: Attribute.Component<'blocks.why-us', true>;
-    faq: Attribute.Component<'blocks.faq'>;
+    barDisplay: Attribute.Component<'blocks.bar-display', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1257,6 +1448,38 @@ export interface ApiTestPageTestPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiVisual3DVisual3D extends Schema.SingleType {
+  collectionName: 'visual_3ds';
+  info: {
+    singularName: 'visual-3d';
+    pluralName: 'visual-3ds';
+    displayName: 'Visual 3d';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    leftImg: Attribute.Media;
+    mainImg: Attribute.Media;
+    rightImg: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::visual-3d.visual-3d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::visual-3d.visual-3d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWorkWork extends Schema.CollectionType {
   collectionName: 'works';
   info: {
@@ -1307,10 +1530,16 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::blog.blog': ApiBlogBlog;
+      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
+      'api::blog-content.blog-content': ApiBlogContentBlogContent;
       'api::category.category': ApiCategoryCategory;
       'api::client.client': ApiClientClient;
       'api::company-video.company-video': ApiCompanyVideoCompanyVideo;
       'api::contact-address.contact-address': ApiContactAddressContactAddress;
+      'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::faq.faq': ApiFaqFaq;
+      'api::faq-card.faq-card': ApiFaqCardFaqCard;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home-content.home-content': ApiHomeContentHomeContent;
@@ -1320,6 +1549,7 @@ declare module '@strapi/types' {
       'api::service-list.service-list': ApiServiceListServiceList;
       'api::tag.tag': ApiTagTag;
       'api::test-page.test-page': ApiTestPageTestPage;
+      'api::visual-3d.visual-3d': ApiVisual3DVisual3D;
       'api::work.work': ApiWorkWork;
     }
   }
