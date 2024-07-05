@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "img": {
+    "video": {
       "type": "media",
       "multiple": false,
       "required": false,

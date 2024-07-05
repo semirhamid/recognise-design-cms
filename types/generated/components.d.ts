@@ -271,7 +271,7 @@ export interface BlocksQuote extends Schema.Component {
     description: '';
   };
   attributes: {
-    img: Attribute.Media;
+    video: Attribute.Media;
     quote: Attribute.RichText;
   };
 }
