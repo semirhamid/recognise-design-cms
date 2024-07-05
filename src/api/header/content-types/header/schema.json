@@ -17,16 +17,20 @@
       "repeatable": true,
       "component": "elements.menu-item"
     },
-    "socialLinks": {
+    "socialLinkss": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.menu-item",
-      "required": false
+      "component": "elements.icon-title-link"
     },
     "contactBtn": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button-with-link"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.icon-title-link"
     }
   }
 }

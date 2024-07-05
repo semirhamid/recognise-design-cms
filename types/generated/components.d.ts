@@ -453,6 +453,18 @@ export interface ElementsButtonWithLink extends Schema.Component {
   };
 }
 
+export interface ElementsIconTitleLink extends Schema.Component {
+  collectionName: 'components_elements_icon_title_links';
+  info: {
+    displayName: 'Icon - Title - Link';
+  };
+  attributes: {
+    text: Attribute.String;
+    icon: Attribute.Media;
+    link: Attribute.String;
+  };
+}
+
 export interface ElementsImageTitleDescriptionLink extends Schema.Component {
   collectionName: 'components_elements_image_title_description_links';
   info: {
@@ -586,6 +598,7 @@ declare module '@strapi/types' {
       'blocks.who-are-we': BlocksWhoAreWe;
       'blocks.why-us': BlocksWhyUs;
       'elements.button-with-link': ElementsButtonWithLink;
+      'elements.icon-title-link': ElementsIconTitleLink;
       'elements.image-title-description-link': ElementsImageTitleDescriptionLink;
       'elements.image-wit-description': ElementsImageWitDescription;
       'elements.menu-item': ElementsMenuItem;

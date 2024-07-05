@@ -1025,6 +1025,7 @@ export interface ApiContactAddressContactAddress extends Schema.SingleType {
     singularName: 'contact-address';
     pluralName: 'contact-addresses';
     displayName: 'Contact address';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1032,6 +1033,7 @@ export interface ApiContactAddressContactAddress extends Schema.SingleType {
   attributes: {
     phoneNumber: Attribute.String;
     email: Attribute.String;
+    location: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1188,8 +1190,9 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
   attributes: {
     navMenus: Attribute.Component<'elements.menu-item', true>;
-    socialLinks: Attribute.Component<'elements.menu-item', true>;
+    socialLinkss: Attribute.Component<'elements.icon-title-link', true>;
     contactBtn: Attribute.Component<'elements.button-with-link'>;
+    socialLinks: Attribute.Component<'elements.icon-title-link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

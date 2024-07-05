@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_icon_title_links",
+  "info": {
+    "displayName": "Icon - Title - Link"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
