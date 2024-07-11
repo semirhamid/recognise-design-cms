@@ -1019,6 +1019,40 @@ export interface ApiCompanyVideoCompanyVideo extends Schema.SingleType {
   };
 }
 
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contacts';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    fullName: Attribute.String;
+    howDidYouHearAboutUs: Attribute.String;
+    phoneNumber: Attribute.String;
+    email: Attribute.String;
+    aboutProject: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactAddressContactAddress extends Schema.SingleType {
   collectionName: 'contact_addresses';
   info: {
@@ -1079,6 +1113,37 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::contact-us-page.contact-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEmailSubscriptionEmailSubscription
+  extends Schema.CollectionType {
+  collectionName: 'email_subscriptions';
+  info: {
+    singularName: 'email-subscription';
+    pluralName: 'email-subscriptions';
+    displayName: 'Email subscriptions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::email-subscription.email-subscription',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::email-subscription.email-subscription',
       'oneToOne',
       'admin::user'
     > &
@@ -1233,6 +1298,7 @@ export interface ApiHomeContentHomeContent extends Schema.SingleType {
       true
     >;
     ourWorks: Attribute.Component<'blocks.home-our-work-section'>;
+    textWithIcons: Attribute.Component<'blocks.home-bottom-section-text-with-icons'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1539,8 +1605,10 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::client.client': ApiClientClient;
       'api::company-video.company-video': ApiCompanyVideoCompanyVideo;
+      'api::contact.contact': ApiContactContact;
       'api::contact-address.contact-address': ApiContactAddressContactAddress;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::email-subscription.email-subscription': ApiEmailSubscriptionEmailSubscription;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-card.faq-card': ApiFaqCardFaqCard;
       'api::footer.footer': ApiFooterFooter;

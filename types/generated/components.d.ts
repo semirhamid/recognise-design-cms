@@ -157,9 +157,52 @@ export interface BlocksHomeAboutUsContent extends Schema.Component {
     titleOne: Attribute.String;
     titlTwo: Attribute.String;
     button: Attribute.Component<'elements.button-with-link'>;
-    descriptionn: Attribute.RichText;
     numericInfos: Attribute.Component<'blocks.title-description-video', true>;
     description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+  };
+}
+
+export interface BlocksHomeBottomSectionTextWithIcons extends Schema.Component {
+  collectionName: 'components_blocks_home_bottom_section_text_with_icons';
+  info: {
+    displayName: 'Home bottom section text with icons';
+    description: '';
+  };
+  attributes: {
+    bottomFirstText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    bottomImageOne: Attribute.Media;
+    bottomImageTwo: Attribute.Media;
+    bottomSecondText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    bottomThirdText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    bottomFourthText: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',
         {
@@ -579,6 +622,7 @@ declare module '@strapi/types' {
       'blocks.faq': BlocksFaq;
       'blocks.features': BlocksFeatures;
       'blocks.home-about-us-content': BlocksHomeAboutUsContent;
+      'blocks.home-bottom-section-text-with-icons': BlocksHomeBottomSectionTextWithIcons;
       'blocks.home-featured-services': BlocksHomeFeaturedServices;
       'blocks.home-our-work-section': BlocksHomeOurWorkSection;
       'blocks.num-info': BlocksNumInfo;

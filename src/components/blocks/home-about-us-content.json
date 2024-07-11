@@ -17,9 +17,6 @@
       "repeatable": false,
       "component": "elements.button-with-link"
     },
-    "descriptionn": {
-      "type": "richtext"
-    },
     "numericInfos": {
       "type": "component",
       "repeatable": true,
