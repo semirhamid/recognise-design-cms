@@ -1384,6 +1384,43 @@ export interface ApiPortfolioPageContentPortfolioPageContent
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'Privacy policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.SingleType {
   collectionName: 'services';
   info: {
@@ -1616,6 +1653,7 @@ declare module '@strapi/types' {
       'api::home-content.home-content': ApiHomeContentHomeContent;
       'api::logo.logo': ApiLogoLogo;
       'api::portfolio-page-content.portfolio-page-content': ApiPortfolioPageContentPortfolioPageContent;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
       'api::service-list.service-list': ApiServiceListServiceList;
       'api::tag.tag': ApiTagTag;
