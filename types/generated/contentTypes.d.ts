@@ -1298,7 +1298,6 @@ export interface ApiHomeContentHomeContent extends Schema.SingleType {
       true
     >;
     ourWorks: Attribute.Component<'blocks.home-our-work-section'>;
-    textWithIcons: Attribute.Component<'blocks.home-bottom-section-text-with-icons'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1384,43 +1383,6 @@ export interface ApiPortfolioPageContentPortfolioPageContent
   };
 }
 
-export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
-  collectionName: 'privacy_policies';
-  info: {
-    singularName: 'privacy-policy';
-    pluralName: 'privacy-policies';
-    displayName: 'Privacy policy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::privacy-policy.privacy-policy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::privacy-policy.privacy-policy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiServiceService extends Schema.SingleType {
   collectionName: 'services';
   info: {
@@ -1434,7 +1396,7 @@ export interface ApiServiceService extends Schema.SingleType {
   };
   attributes: {
     serviceHeader: Attribute.Component<'blocks.service-header'>;
-    visual: Attribute.Component<'blocks.visual'>;
+    about: Attribute.Component<'blocks.visual'>;
     information: Attribute.Component<'elements.our-process', true>;
     stepWithImg: Attribute.Component<'blocks.step-with-img', true>;
     whyUs: Attribute.Component<'blocks.why-us', true>;
@@ -1653,7 +1615,6 @@ declare module '@strapi/types' {
       'api::home-content.home-content': ApiHomeContentHomeContent;
       'api::logo.logo': ApiLogoLogo;
       'api::portfolio-page-content.portfolio-page-content': ApiPortfolioPageContentPortfolioPageContent;
-      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
       'api::service-list.service-list': ApiServiceListServiceList;
       'api::tag.tag': ApiTagTag;

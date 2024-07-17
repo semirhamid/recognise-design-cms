@@ -2,39 +2,24 @@
   "collectionName": "components_blocks_visuals",
   "info": {
     "displayName": "visual",
-    "icon": "command"
+    "icon": "command",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "leftVisual": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "rightVisual": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "mainVisual": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "text": {
+      "type": "string"
     }
   }
 }
