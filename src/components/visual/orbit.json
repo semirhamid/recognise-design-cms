@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_visual_orbits",
+  "info": {
+    "displayName": "Orbit"
+  },
+  "options": {},
+  "attributes": {
+    "innerCircleTitle": {
+      "type": "string"
+    },
+    "innerCirclePointers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-with-class"
+    },
+    "middleCircleTitle": {
+      "type": "string"
+    },
+    "middleCirclePointers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-with-class"
+    },
+    "outerCircleTitle": {
+      "type": "string"
+    },
+    "outerCirclePointers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.text-with-class"
+    }
+  }
+}

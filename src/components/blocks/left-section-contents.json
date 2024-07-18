@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_left_section_contents",
+  "info": {
+    "displayName": "Left section contents",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

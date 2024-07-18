@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_blocks_phases",
+  "info": {
+    "displayName": "Phases"
+  },
+  "options": {},
+  "attributes": {
+    "phaseName": {
+      "type": "string"
+    }
+  }
+}

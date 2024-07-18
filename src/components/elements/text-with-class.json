@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_text_with_classes",
+  "info": {
+    "displayName": "textWithClass"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "class": {
+      "type": "string"
+    }
+  }
+}

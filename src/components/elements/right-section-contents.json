@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_right_section_contents",
+  "info": {
+    "displayName": "right section contents",
+    "icon": "arrowUp"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

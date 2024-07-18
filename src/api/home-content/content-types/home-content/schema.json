@@ -42,6 +42,16 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.home-our-work-section"
+    },
+    "textWithIcons": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.home-bottom-section-text-with-icons"
+    },
+    "OrbitalSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "visual.orbit"
     }
   }
 }

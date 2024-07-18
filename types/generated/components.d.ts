@@ -43,6 +43,27 @@ export interface BlocksCard extends Schema.Component {
   };
 }
 
+export interface BlocksClientHistory extends Schema.Component {
+  collectionName: 'components_blocks_client_histories';
+  info: {
+    displayName: 'Client history';
+    icon: 'attachment';
+  };
+  attributes: {
+    title: Attribute.String;
+    rightSectionTitle: Attribute.String;
+    leftSectionContents: Attribute.Component<
+      'blocks.left-section-contents',
+      true
+    >;
+    phases: Attribute.Component<'blocks.phases', true>;
+    rightSectionContents: Attribute.Component<
+      'elements.right-section-contents',
+      true
+    >;
+  };
+}
+
 export interface BlocksContent extends Schema.Component {
   collectionName: 'components_blocks_contents';
   info: {
@@ -169,6 +190,50 @@ export interface BlocksHomeAboutUsContent extends Schema.Component {
   };
 }
 
+export interface BlocksHomeBottomSectionTextWithIcons extends Schema.Component {
+  collectionName: 'components_blocks_home_bottom_section_text_with_icons';
+  info: {
+    displayName: 'Home bottom section text with icons';
+    description: '';
+  };
+  attributes: {
+    bottomFirstText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    bottomImageOne: Attribute.Media;
+    bottomImageTwo: Attribute.Media;
+    bottomSecondText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    bottomThirdText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    bottomFourthText: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+  };
+}
+
 export interface BlocksHomeFeaturedServices extends Schema.Component {
   collectionName: 'components_blocks_home_featured_services';
   info: {
@@ -212,6 +277,17 @@ export interface BlocksHomeOurWorkSection extends Schema.Component {
   };
 }
 
+export interface BlocksLeftSectionContents extends Schema.Component {
+  collectionName: 'components_blocks_left_section_contents';
+  info: {
+    displayName: 'Left section contents';
+    icon: 'cog';
+  };
+  attributes: {
+    content: Attribute.Text;
+  };
+}
+
 export interface BlocksNumInfo extends Schema.Component {
   collectionName: 'components_blocks_num_infos';
   info: {
@@ -222,6 +298,16 @@ export interface BlocksNumInfo extends Schema.Component {
     title: Attribute.String;
     description: Attribute.String;
     video: Attribute.Media;
+  };
+}
+
+export interface BlocksPhases extends Schema.Component {
+  collectionName: 'components_blocks_phases';
+  info: {
+    displayName: 'Phases';
+  };
+  attributes: {
+    phaseName: Attribute.String;
   };
 }
 
@@ -272,21 +358,6 @@ export interface BlocksQuote extends Schema.Component {
   attributes: {
     video: Attribute.Media;
     quote: Attribute.RichText;
-  };
-}
-
-export interface BlocksRoleAndResponsiblity extends Schema.Component {
-  collectionName: 'components_blocks_role_and_responsiblity_s';
-  info: {
-    displayName: 'role and responsiblity ';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    leftCardImg: Attribute.Media;
-    rightCardTitle: Attribute.String;
-    rightCardIcon: Attribute.Media;
-    content: Attribute.Component<'blocks.content', true>;
   };
 }
 
@@ -515,6 +586,17 @@ export interface ElementsOurProcess extends Schema.Component {
   };
 }
 
+export interface ElementsRightSectionContents extends Schema.Component {
+  collectionName: 'components_elements_right_section_contents';
+  info: {
+    displayName: 'right section contents';
+    icon: 'arrowUp';
+  };
+  attributes: {
+    content: Attribute.Text;
+  };
+}
+
 export interface ElementsTestComponent extends Schema.Component {
   collectionName: 'components_test_component_test_components';
   info: {
@@ -549,6 +631,25 @@ export interface ElementsTextInput extends Schema.Component {
   };
 }
 
+export interface ElementsTextWithClass extends Schema.Component {
+  collectionName: 'components_elements_text_with_classes';
+  info: {
+    displayName: 'textWithClass';
+  };
+  attributes: {
+    label: Attribute.String;
+    class: Attribute.String;
+  };
+}
+
+export interface ElementsTextWithCoordinates extends Schema.Component {
+  collectionName: 'components_elements_text_with_coordinates';
+  info: {
+    displayName: 'Text with coordinates';
+  };
+  attributes: {};
+}
+
 export interface ElementsTitleDescriptionTags extends Schema.Component {
   collectionName: 'components_elements_title_description_tags';
   info: {
@@ -563,12 +664,28 @@ export interface ElementsTitleDescriptionTags extends Schema.Component {
   };
 }
 
+export interface VisualOrbit extends Schema.Component {
+  collectionName: 'components_visual_orbits';
+  info: {
+    displayName: 'Orbit';
+  };
+  attributes: {
+    innerCircleTitle: Attribute.String;
+    innerCirclePointers: Attribute.Component<'elements.text-with-class', true>;
+    middleCircleTitle: Attribute.String;
+    middleCirclePointers: Attribute.Component<'elements.text-with-class', true>;
+    outerCircleTitle: Attribute.String;
+    outerCirclePointers: Attribute.Component<'elements.text-with-class', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blocks.about-us-header': BlocksAboutUsHeader;
       'blocks.bar-display': BlocksBarDisplay;
       'blocks.card': BlocksCard;
+      'blocks.client-history': BlocksClientHistory;
       'blocks.content': BlocksContent;
       'blocks.faq-card-content': BlocksFaqCardContent;
       'blocks.faq-card': BlocksFaqCard;
@@ -578,13 +695,15 @@ declare module '@strapi/types' {
       'blocks.faq': BlocksFaq;
       'blocks.features': BlocksFeatures;
       'blocks.home-about-us-content': BlocksHomeAboutUsContent;
+      'blocks.home-bottom-section-text-with-icons': BlocksHomeBottomSectionTextWithIcons;
       'blocks.home-featured-services': BlocksHomeFeaturedServices;
       'blocks.home-our-work-section': BlocksHomeOurWorkSection;
+      'blocks.left-section-contents': BlocksLeftSectionContents;
       'blocks.num-info': BlocksNumInfo;
+      'blocks.phases': BlocksPhases;
       'blocks.portfolio': BlocksPortfolio;
       'blocks.process': BlocksProcess;
       'blocks.quote': BlocksQuote;
-      'blocks.role-and-responsiblity': BlocksRoleAndResponsiblity;
       'blocks.role': BlocksRole;
       'blocks.service-header': BlocksServiceHeader;
       'blocks.setup-team': BlocksSetupTeam;
@@ -602,10 +721,14 @@ declare module '@strapi/types' {
       'elements.image-wit-description': ElementsImageWitDescription;
       'elements.menu-item': ElementsMenuItem;
       'elements.our-process': ElementsOurProcess;
+      'elements.right-section-contents': ElementsRightSectionContents;
       'elements.test-component': ElementsTestComponent;
       'elements.text-area': ElementsTextArea;
       'elements.text-input': ElementsTextInput;
+      'elements.text-with-class': ElementsTextWithClass;
+      'elements.text-with-coordinates': ElementsTextWithCoordinates;
       'elements.title-description-tags': ElementsTitleDescriptionTags;
+      'visual.orbit': VisualOrbit;
     }
   }
 }

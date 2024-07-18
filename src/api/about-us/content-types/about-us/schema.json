@@ -48,11 +48,11 @@
       "repeatable": false,
       "component": "blocks.portfolio"
     },
-    "roleAndResponsibility": {
-      "displayName": "role and responsiblity ",
+    "clientHistory": {
+      "displayName": "Client history",
       "type": "component",
       "repeatable": false,
-      "component": "blocks.role-and-responsiblity"
+      "component": "blocks.client-history"
     }
   }
 }
