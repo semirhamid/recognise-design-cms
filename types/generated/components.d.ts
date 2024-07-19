@@ -288,6 +288,17 @@ export interface BlocksLeftSectionContents extends Schema.Component {
   };
 }
 
+export interface BlocksMetaTitleDescription extends Schema.Component {
+  collectionName: 'components_blocks_meta_title_descriptions';
+  info: {
+    displayName: 'Meta title description';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface BlocksNumInfo extends Schema.Component {
   collectionName: 'components_blocks_num_infos';
   info: {
@@ -699,6 +710,7 @@ declare module '@strapi/types' {
       'blocks.home-featured-services': BlocksHomeFeaturedServices;
       'blocks.home-our-work-section': BlocksHomeOurWorkSection;
       'blocks.left-section-contents': BlocksLeftSectionContents;
+      'blocks.meta-title-description': BlocksMetaTitleDescription;
       'blocks.num-info': BlocksNumInfo;
       'blocks.phases': BlocksPhases;
       'blocks.portfolio': BlocksPortfolio;

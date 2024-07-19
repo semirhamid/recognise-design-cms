@@ -1422,6 +1422,42 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   };
 }
 
+export interface ApiSeoMetaDescriptionSeoMetaDescription
+  extends Schema.SingleType {
+  collectionName: 'seo_meta_descriptions';
+  info: {
+    singularName: 'seo-meta-description';
+    pluralName: 'seo-meta-descriptions';
+    displayName: 'SEO meta description';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    home: Attribute.Component<'blocks.meta-title-description'>;
+    about: Attribute.Component<'blocks.meta-title-description'>;
+    service: Attribute.Component<'blocks.meta-title-description'>;
+    contact: Attribute.Component<'blocks.meta-title-description'>;
+    portfolio: Attribute.Component<'blocks.meta-title-description'>;
+    blog: Attribute.Component<'blocks.meta-title-description'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-meta-description.seo-meta-description',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-meta-description.seo-meta-description',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.SingleType {
   collectionName: 'services';
   info: {
@@ -1655,6 +1691,7 @@ declare module '@strapi/types' {
       'api::logo.logo': ApiLogoLogo;
       'api::portfolio-page-content.portfolio-page-content': ApiPortfolioPageContentPortfolioPageContent;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::seo-meta-description.seo-meta-description': ApiSeoMetaDescriptionSeoMetaDescription;
       'api::service.service': ApiServiceService;
       'api::service-list.service-list': ApiServiceListServiceList;
       'api::tag.tag': ApiTagTag;
